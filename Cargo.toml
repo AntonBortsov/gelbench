@@ -1,0 +1,21 @@
+[package]
+name = "tesserae-sim"
+version = "0.1.0"
+edition = "2021"
+description = "Deterministic DNA agarose gel electrophoresis simulator"
+
+[dependencies]
+libm = "0.2"
+serde = { version = "1", features = ["derive"] }
+
+[dev-dependencies]
+serde_json = "1"
+
+[profile.release]
+lto = "thin"
+strip = "symbols"
+
+[lints.clippy]
+needless_range_loop = "allow"
+field_reassign_with_default = "allow"
+assertions_on_constants = "allow"
